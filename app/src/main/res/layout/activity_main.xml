@@ -7,42 +7,91 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text_view_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="64dp"
-        android:text="Filmes de hoje!"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/image_fantasia"
-        android:layout_width="111dp"
-        android:layout_height="184dp"
-        android:layout_below="@id/text_view_name"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="0dp"
-        android:src="@drawable/img" />
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="343dp"
+            android:layout_height="68dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:text="Filmes de hoje!"
+            android:textSize="45dp"
+            android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/image_terror"
-        android:layout_width="148dp"
-        android:layout_height="167dp"
-        android:layout_below="@id/image_fantasia"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="-11dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="0dp"
-        android:src="@drawable/img_1" />
 
-    <ImageView
-        android:id="@+id/image_romance"
-        android:layout_width="111dp"
-        android:layout_height="148dp"/>
+        <ImageView
+            android:id="@+id/image_fantasia"
+            android:layout_width="176dp"
+            android:layout_height="276dp"
+            android:layout_below="@id/text_view_name"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/img" />
+
+        <TextView
+            android:id="@+id/text_view_namefantasia"
+            android:layout_width="343dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:text="Harry Potter e o Prisoneiro de Azkaban"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_terror"
+            android:layout_width="223dp"
+            android:layout_height="318dp"
+            android:layout_below="@id/image_fantasia"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/text_view_nameterror"
+            android:layout_width="343dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/text_view_namefantasia"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="250dp"
+            android:text="It: a coisa"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_romance"
+            android:layout_width="175dp"
+            android:layout_height="330dp"
+            android:layout_below="@id/image_terror"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/img_3"/>
+
+        <TextView
+            android:id="@+id/text_view_nameromance"
+            android:layout_width="343dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/text_view_nameterror"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="250dp"
+            android:text="Esposa de mentirinha"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+
 
 </RelativeLayout>

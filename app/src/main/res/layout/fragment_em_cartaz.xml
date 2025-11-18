@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragCartaz"
+    tools:context=".EmCartaz">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+
+        <RelativeLayout
+            android:id="@+id/harrypotter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#B40404"
+                android:layout_below="@id/titulo"
+                />
+
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Filmes de hoje!"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <ImageView
+                android:id="@+id/image_fantasia"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/titulo"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+
+            <TextView
+                android:id="@+id/text_view_fantasia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titulo"
+                android:text="Harry Potter e o Prisoneiro de Azkaban"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_fantasia"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="90dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+            <!-- IT: A COISA-->
+            <ImageView
+                android:id="@+id/image_terror"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_fantasia"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_10"
+                android:layout_marginTop="20dp"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_half_24"
+                android:layout_below="@id/text_view_terror"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+
+
+            <TextView
+                android:id="@+id/text_view_terror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_fantasia"
+                android:text="It: a coisa"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="170dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_terror"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+
+            <!-- ESPOSA DE MENTIRINHA-->
+            <ImageView
+                android:id="@+id/image_romance"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_terror"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_3"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_half_24"
+                android:layout_below="@id/text_view_romance"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_border_24"
+                android:layout_below="@id/text_view_romance"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+            <TextView
+                android:id="@+id/text_view_romance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_terror"
+                android:text="Esposa de Mentirinha"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="195dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_romance"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+            <!-- VINGADORES -->
+            <ImageView
+                android:id="@+id/image_acao"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_romance"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_4"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+
+            <TextView
+                android:id="@+id/text_view_acao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_romance"
+                android:text="Vingadores: Ultimato"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="190dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_acao"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+            <!-- TODO MUNDO EM PÂNICO -->
+            <ImageView
+                android:id="@+id/image_terror2"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_acao"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_5"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_terror2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_half_24"
+                android:layout_below="@id/text_view_terror2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_border_24"
+                android:layout_below="@id/text_view_terror2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+
+            <TextView
+                android:id="@+id/text_view_terror2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_acao"
+                android:text="Todo Mundo em Pânico 5"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="190dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_terror2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+
+            <!-- PIRATAS DO CARIBE -->
+            <ImageView
+                android:id="@+id/image_fantasia2"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_terror2"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_7"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_fantasia2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_half_24"
+                android:layout_below="@id/text_view_fantasia2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+            <TextView
+                android:id="@+id/text_view_fantasia2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_terror2"
+                android:text="Piratas do Caribe"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="190dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_fantasia2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+
+            <!-- TITANIC -->
+            <ImageView
+                android:id="@+id/image_romance2"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_fantasia2"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_8"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_romance2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_half_24"
+                android:layout_below="@id/text_view_romance2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+            <TextView
+                android:id="@+id/text_view_romance2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_fantasia2"
+                android:text="Titanic"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="195dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_romance2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+
+
+            <!-- JOHN WICK -->
+            <ImageView
+                android:id="@+id/image_acao2"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_below="@id/image_romance2"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/img_9"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_below="@id/text_view_acao2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_half_24"
+                android:layout_below="@id/text_view_acao2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_border_24"
+                android:layout_below="@id/text_view_acao2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="90dp"
+                android:tint="#FFD700"/>
+
+
+            <TextView
+                android:id="@+id/text_view_acao2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_romance2"
+                android:text="John Wick 3"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="195dp"
+                android:layout_toEndOf="@id/image_fantasia"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_acao2"
+                android:layout_toEndOf="@id/image_fantasia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/white"
+                android:text="Ver mais"
+                android:backgroundTint="#B40404"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

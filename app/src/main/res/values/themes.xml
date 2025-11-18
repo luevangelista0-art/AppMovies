@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.AppMovies" parent="Base.Theme.AppMovies" />
+
+    <style name="BottomNav_NoIcon" parent="Widget.MaterialComponents.BottomNavigationView">
+
+        <item name="itemPaddingTop">0dp</item>
+        <item name="itemPaddingBottom">0dp</item>
+    </style>
 </resources>

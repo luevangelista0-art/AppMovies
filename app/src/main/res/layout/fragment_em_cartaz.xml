@@ -41,7 +41,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/titulo"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img"
+                android:src="@drawable/harrypotter"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -109,6 +109,8 @@
                 />
 
             <Button
+                android:id="@+id/btnHarry"
+                android:tag="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_fantasia"
@@ -128,7 +130,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/image_fantasia"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_10"
+                android:src="@drawable/it"
                 android:layout_marginTop="20dp"/>
 
 
@@ -198,6 +200,8 @@
                 />
 
             <Button
+                android:id="@+id/btnIt"
+                android:tag="2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_terror"
@@ -218,7 +222,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/image_terror"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_3"
+                android:src="@drawable/edm"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -284,18 +288,20 @@
                 android:layout_toEndOf="@id/image_fantasia"
                 />
 
+
+
             <Button
+                android:id="@+id/btnEdm"
+                android:tag="3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_romance"
-                android:layout_toEndOf="@id/image_fantasia"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="100dp"
-                android:textColor="@color/white"
-                android:text="Ver mais"
+                android:layout_marginTop="99dp"
+                android:layout_toEndOf="@id/image_fantasia"
                 android:backgroundTint="#B40404"
-                />
-
+                android:text="Ver mais"
+                android:textColor="@color/white" />
 
             <!-- VINGADORES -->
             <ImageView
@@ -304,7 +310,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/image_romance"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_4"
+                android:src="@drawable/vingadores"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -372,6 +378,8 @@
                 />
 
             <Button
+                android:id="@+id/btnVing"
+                android:tag="4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_acao"
@@ -384,14 +392,14 @@
                 />
 
 
-            <!-- TODO MUNDO EM PÂNICO -->
+            <!-- PÂNICO 5-->
             <ImageView
                 android:id="@+id/image_terror2"
                 android:layout_width="130dp"
                 android:layout_height="193dp"
                 android:layout_below="@id/image_acao"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_5"
+                android:src="@drawable/panico"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -450,7 +458,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_view_acao"
-                android:text="Todo Mundo em Pânico 5"
+                android:text="Pânico 5"
                 android:textStyle="bold"
                 android:textSize="17dp"
                 android:layout_marginStart="5dp"
@@ -459,6 +467,8 @@
                 />
 
             <Button
+                android:id="@+id/btnPanico"
+                android:tag="5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_terror2"
@@ -479,7 +489,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/image_terror2"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_7"
+                android:src="@drawable/pdc"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -546,6 +556,8 @@
                 />
 
             <Button
+                android:id="@+id/btnPiratas"
+                android:tag="6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_fantasia2"
@@ -566,7 +578,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/image_fantasia2"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_8"
+                android:src="@drawable/titanic"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -633,6 +645,8 @@
                 />
 
             <Button
+                android:id="@+id/btnTitanic"
+                android:tag="7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_romance2"
@@ -653,7 +667,7 @@
                 android:layout_height="193dp"
                 android:layout_below="@id/image_romance2"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/img_9"
+                android:src="@drawable/johnwick"
                 android:layout_marginTop="20dp"/>
 
             <ImageView
@@ -721,6 +735,8 @@
                 />
 
             <Button
+                android:id="@+id/btnJohn"
+                android:tag="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_acao2"

@@ -1,10 +1,12 @@
 package com.example.appmovies
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,32 @@ class EmCartaz : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_em_cartaz, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnHarry = view.findViewById<Button>(R.id.btnHarry)
+        val btnIt = view.findViewById<Button>(R.id.btnIt)
+        val btnEdm = view.findViewById<Button>(R.id.btnEdm)
+        val btnVing = view.findViewById<Button>(R.id.btnVing)
+        val btnPanico = view.findViewById<Button>(R.id.btnPanico)
+        val btnPiratas = view.findViewById<Button>(R.id.btnPiratas)
+        val btnTitanic = view.findViewById<Button>(R.id.btnTitanic)
+        val btnJohn = view.findViewById<Button>(R.id.btnJohn)
+
+        val buttons = listOf(btnHarry, btnIt, btnEdm,btnVing,btnPanico,btnPiratas,btnTitanic, btnJohn)
+        val intent = Intent(context, Detalhes::class.java)
+        val chave_id = "filme_id"
+
+
+        buttons.forEach { button ->
+            button.setOnClickListener { click ->
+                val filme_id = click .tag.toString().toIntOrNull() ?: 0
+                intent.putExtra(chave_id, filme_id)
+                startActivity(intent)
+            }
+        }
     }
 
     companion object {

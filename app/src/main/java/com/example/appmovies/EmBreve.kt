@@ -42,7 +42,7 @@ class EmBreve : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Agora sim podemos usar findViewById pois a view foi criada
+
         val btnF1 = view.findViewById<Button>(R.id.f1)
         val btnF2 = view.findViewById<Button>(R.id.f2)
         val btnF3 = view.findViewById<Button>(R.id.f3)

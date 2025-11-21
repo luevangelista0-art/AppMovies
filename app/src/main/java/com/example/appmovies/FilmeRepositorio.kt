@@ -38,9 +38,9 @@ class FilmeRepositorio {
             "A trajetória de Senor Abravanel, o homem por trás do ícone Silvio Santos, desde vendedor de rua até se tornar um dos maiores apresentadores e empresários da televisão brasileira.",
             R.drawable.silvio
         )
+
+
     )
-
-
     fun getFilme(id: Int): Filme?{
         return listFilme.find { it.codigo == id }
     }

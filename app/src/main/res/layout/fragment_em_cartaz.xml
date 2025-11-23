@@ -16,12 +16,24 @@
             android:id="@+id/harrypotter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/saldacao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:text="Olá , "
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginTop="36dp"
+                />
 
             <View
+                android:id="@+id/viewRisco"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:background="#B40404"
-                android:layout_below="@id/titulo"
+                android:layout_below="@id/saldacao"
                 />
 
 
@@ -30,8 +42,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Filmes de hoje!"
-                android:textSize="30sp"
+                android:layout_below="@+id/saldacao"
+                android:text="Confira nossos filmes de hoje!"
+                android:gravity="center"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 

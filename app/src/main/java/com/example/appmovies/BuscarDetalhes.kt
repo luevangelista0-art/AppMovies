@@ -5,7 +5,8 @@ import kotlin.collections.find
 
 class BuscarDetalhes {
 
-    data class Detalhes(val id : Int, val img : Int, val titulo : String, val sinopse : String)
+    data class Sessao(val idSessao : Int, val horario : String, val tipoSessao : String, val local : String )
+    data class Detalhes(val id : Int, val img : Int, val titulo : String, val sinopse : String, val sessoes : List<Sessao>)
 
     private val listDetalhes: List<Detalhes> = listOf(
 
@@ -17,7 +18,12 @@ class BuscarDetalhes {
                     "\n" +
                     "Harry, Rony e Hermione investigam a verdade por trás da fuga de Black e descobrem que ele era o melhor amigo dos pais de Harry, tendo sido falsamente acusado de traí-los para Voldemort e assassinar o verdadeiro traidor, Pedro Pettigrew.\n" +
                     "\n" +
-                    "Com a ajuda do Professor Lupin e de um Vira-Tempo, eles salvam Black da execução, provando sua inocência. No final, Black foge e Harry ganha um padrinho, mudando sua vida para sempre."
+                    "Com a ajuda do Professor Lupin e de um Vira-Tempo, eles salvam Black da execução, provando sua inocência. No final, Black foge e Harry ganha um padrinho, mudando sua vida para sempre.",
+            sessoes = listOf(
+                Sessao(101, "12:00", "Standard", "Shopping A"),
+                Sessao(102, "15:30", "3D", "Shopping A"),
+                Sessao(103, "20:45", "Standard", "Shopping B")
+            )
         ),
         Detalhes(
             2,
@@ -27,7 +33,11 @@ class BuscarDetalhes {
                     "\n" +
                     "Um grupo de adolescentes excluídos, que se autodenominam o \"Clube dos Perdedores\", é forçado a confrontar seus maiores medos (que a Coisa usa para se manifestar) após o irmão mais novo do líder, Bill Denbrough, ser morto.\n" +
                     "\n" +
-                    "Eles fazem um juramento de sangue para destruir a criatura. Anos depois, já adultos, eles precisam se reunir para cumprir essa promessa e enfrentar Pennywise uma última vez. A história lida com o poder da amizade, o trauma da infância e a superação do mal através da união."
+                    "Eles fazem um juramento de sangue para destruir a criatura. Anos depois, já adultos, eles precisam se reunir para cumprir essa promessa e enfrentar Pennywise uma última vez. A história lida com o poder da amizade, o trauma da infância e a superação do mal através da união.",
+            sessoes = listOf(
+                Sessao(201, "14:00", "VIP", "Shopping C"),
+                Sessao(202, "18:30", "Standard", "Shopping C")
+            )
         ),
         Detalhes(
             3,
@@ -39,7 +49,13 @@ class BuscarDetalhes {
                     "\n" +
                     "Quando Palmer insiste em conhecer a \"esposa\" para ter certeza de que o casamento realmente acabou, Danny entra em pânico e pede ajuda à sua leal assistente, Katherine Murphy (Jennifer Aniston), uma mãe solteira, para fingir ser sua futura ex-esposa.\n" +
                     "\n" +
-                    "A mentira cresce rapidamente quando os dois filhos de Katherine também são envolvidos e todo o grupo — Danny, Palmer, Katherine e as crianças — embarca em uma viagem ao Havaí. Lá, em meio a diversas situações hilárias e a aparição inesperada de uma antiga rival de Katherine (Nicole Kidman), a linha entre a mentira e a realidade começa a se apagar. Danny e Katherine percebem que a química entre eles é muito maior do que a simples parceria profissional, questionando quem é o verdadeiro amor de Danny."
+                    "A mentira cresce rapidamente quando os dois filhos de Katherine também são envolvidos e todo o grupo — Danny, Palmer, Katherine e as crianças — embarca em uma viagem ao Havaí. Lá, em meio a diversas situações hilárias e a aparição inesperada de uma antiga rival de Katherine (Nicole Kidman), a linha entre a mentira e a realidade começa a se apagar. Danny e Katherine percebem que a química entre eles é muito maior do que a simples parceria profissional, questionando quem é o verdadeiro amor de Danny.",
+            sessoes = listOf(
+                Sessao(301, "10:30", "Standard", "Shopping D"),
+                Sessao(302, "16:15", "Standard", "Shopping A"),
+                Sessao(303, "19:45", "3D", "Shopping A"),
+                Sessao(304, "22:00", "VIP", "Shopping B")
+            )
         ),
         Detalhes(
             4,
@@ -49,7 +65,11 @@ class BuscarDetalhes {
                     "\n" +
                     "Cinco anos depois, eles descobrem uma chance de reverter o dano usando o Reino Quântico para viajar no tempo e coletar as Joias do Infinito no passado.\n" +
                     "\n" +
-                    "A missão é um sucesso, mas o ato traz o Thanos de 2014 para o presente. Os Vingadores, reunindo todos os seus aliados ressuscitados, travam uma batalha final épica contra o Titã. O sacrifício de Tony Stark (Homem de Ferro), usando as Joias para eliminar Thanos e seu exército, salva o universo e restaura toda a vida perdida."
+                    "A missão é um sucesso, mas o ato traz o Thanos de 2014 para o presente. Os Vingadores, reunindo todos os seus aliados ressuscitados, travam uma batalha final épica contra o Titã. O sacrifício de Tony Stark (Homem de Ferro), usando as Joias para eliminar Thanos e seu exército, salva o universo e restaura toda a vida perdida.",
+            sessoes = listOf(
+                Sessao(401, "21:00", "Standard", "Shopping C")
+            )
+
         ),
         Detalhes(
             5,
@@ -59,7 +79,12 @@ class BuscarDetalhes {
                     "\n" +
                     "A principal protagonista é Sam Carpenter, que volta à sua cidade natal após o ataque à sua irmã, Tara. Sam carrega um segredo mortal: ela é a filha não reconhecida de Billy Loomis, um dos Ghostfaces originais.\n" +
                     "\n" +
-                    "Para sobreviver e descobrir a identidade do novo assassino, os jovens precisam da ajuda dos heróis lendários da franquia: Sidney Prescott, Gale Weathers e Dewey Riley. O filme é uma releitura meta-referencial do original, misturando a nova geração com a clássica, enquanto expõe as regras dos \"reboots-sequência\" de filmes de terror."
+                    "Para sobreviver e descobrir a identidade do novo assassino, os jovens precisam da ajuda dos heróis lendários da franquia: Sidney Prescott, Gale Weathers e Dewey Riley. O filme é uma releitura meta-referencial do original, misturando a nova geração com a clássica, enquanto expõe as regras dos \"reboots-sequência\" de filmes de terror.",
+            sessoes = listOf(
+                Sessao(501, "13:40", "Standard", "Shopping A"),
+                Sessao(502, "17:10", "3D", "Shopping D"),
+                Sessao(503, "23:59", "VIP", "Shopping D")
+            )
         ),
         Detalhes(
             6,
@@ -69,7 +94,11 @@ class BuscarDetalhes {
                     "\n" +
                     "O ferreiro Will Turner, apaixonado por Elizabeth, alia-se ao excêntrico e carismático Capitão Jack Sparrow para persegui-los, resgatar Elizabeth e recuperar o navio de Jack.\n" +
                     "\n" +
-                    "Eles enfrentam os piratas amaldiçoados em uma aventura épica cheia de duelos e reviravoltas para quebrar o feitiço e restaurar a ordem no Caribe."
+                    "Eles enfrentam os piratas amaldiçoados em uma aventura épica cheia de duelos e reviravoltas para quebrar o feitiço e restaurar a ordem no Caribe.",
+            sessoes = listOf(
+                Sessao(601, "11:00", "Standard", "Shopping B"),
+                Sessao(602, "18:45", "Standard", "Shopping C")
+            )
         ),
         Detalhes(
             7,
@@ -77,7 +106,12 @@ class BuscarDetalhes {
             "Titanic",
             "Em 1912, a jovem aristocrata Rose DeWitt Bukater, presa a um noivado infeliz, embarca no luxuoso navio Titanic. A bordo, ela conhece Jack Dawson, um artista pobre, e os dois iniciam um intenso e proibido romance, desafiando as barreiras sociais.\n" +
                     "\n" +
-                    "A paixão é tragicamente interrompida quando o navio atinge um iceberg. O amor de Jack e Rose é colocado à prova em meio ao caos e ao pânico do naufrágio. O filme é um épico de romance e desastre, focado na luta deles pela sobrevivência."
+                    "A paixão é tragicamente interrompida quando o navio atinge um iceberg. O amor de Jack e Rose é colocado à prova em meio ao caos e ao pânico do naufrágio. O filme é um épico de romance e desastre, focado na luta deles pela sobrevivência.",
+            sessoes = listOf(
+                Sessao(701, "15:10", "VIP", "Shopping A"),
+                Sessao(702, "19:30", "Standard", "Shopping A"),
+                Sessao(703, "21:30", "3D", "Shopping D")
+            )
         ),
         Detalhes(
             8,
@@ -87,7 +121,11 @@ class BuscarDetalhes {
                     "\n" +
                     "Considerado \"excomungado\" pela Alta Cúpula, ele precisa lutar contra um exército de assassinos de elite que estão atrás dele, transformando-se de caçador em caça.\n" +
                     "\n" +
-                    "Para sobreviver, John busca a ajuda de antigos aliados e tenta encontrar o caminho para o Ancião, a única figura capaz de perdoá-lo. O filme é uma jornada de ação brutal e coreografada, onde John Wick precisa \"preparar-se para a guerra\" e enfrentar as consequências de suas escolhas."
+                    "Para sobreviver, John busca a ajuda de antigos aliados e tenta encontrar o caminho para o Ancião, a única figura capaz de perdoá-lo. O filme é uma jornada de ação brutal e coreografada, onde John Wick precisa \"preparar-se para a guerra\" e enfrentar as consequências de suas escolhas.",
+            sessoes = listOf(
+                Sessao(801, "14:20", "Standard", "Shopping B"),
+                Sessao(802, "20:10", "VIP", "Shopping C")
+            )
         )
     )
     fun getDetalhe(id: Int): Detalhes?{

@@ -5,6 +5,8 @@
     android:id="@+id/my_nav"
     app:startDestination="@id/emCartaz">
 
+
+
     <fragment
         android:id="@+id/emCartaz"
         android:name="com.example.appmovies.EmCartaz"

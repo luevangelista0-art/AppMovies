@@ -1,0 +1,1696 @@
+[33mcommit 260dfa8177acca19cda849fb18720481db3c880f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mversao_com_duas_telas[m[33m)[m
+Author: Giovanne Santos <giovannemg22@hotmail.com>
+Date:   Fri Nov 21 18:13:45 2025 -0300
+
+    Criação da logica para a tela de detalhes
+
+[1mdiff --git a/app/.idea/.gitignore b/app/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..26d3352[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/.gitignore[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[1mdiff --git a/app/.idea/AndroidProjectSystem.xml b/app/.idea/AndroidProjectSystem.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4a53bee[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/AndroidProjectSystem.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="AndroidProjectSystem">[m
+[32m+[m[32m    <option name="providerId" value="com.android.tools.idea.GradleProjectSystem" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/.idea/caches/deviceStreaming.xml b/app/.idea/caches/deviceStreaming.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ac9e2a4[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/caches/deviceStreaming.xml[m
+[36m@@ -0,0 +1,1029 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="DeviceStreaming">[m
+[32m+[m[32m    <option name="deviceSelectionList">[m
+[32m+[m[32m      <list>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="Sony" />[m
+[32m+[m[32m          <option name="codename" value="A402SO" />[m
+[32m+[m[32m          <option name="id" value="A402SO" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Sony" />[m
+[32m+[m[32m          <option name="name" value="Xperia 10" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2520" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="27" />[m
+[32m+[m[32m          <option name="brand" value="DOCOMO" />[m
+[32m+[m[32m          <option name="codename" value="F01L" />[m
+[32m+[m[32m          <option name="id" value="F01L" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="FUJITSU" />[m
+[32m+[m[32m          <option name="name" value="F-01L" />[m
+[32m+[m[32m          <option name="screenDensity" value="360" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1280" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="OnePlus" />[m
+[32m+[m[32m          <option name="codename" value="OP535DL1" />[m
+[32m+[m[32m          <option name="id" value="OP535DL1" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="OnePlus" />[m
+[32m+[m[32m          <option name="name" value="CPH2409" />[m
+[32m+[m[32m          <option name="screenDensity" value="401" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2412" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="OnePlus" />[m
+[32m+[m[32m          <option name="codename" value="OP5552L1" />[m
+[32m+[m[32m          <option name="id" value="OP5552L1" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="OnePlus" />[m
+[32m+[m[32m          <option name="name" value="CPH2415" />[m
+[32m+[m[32m          <option name="screenDensity" value="480" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2412" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="OnePlus" />[m
+[32m+[m[32m          <option name="codename" value="OP5552L1" />[m
+[32m+[m[32m          <option name="id" value="OP5552L1" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="OnePlus" />[m
+[32m+[m[32m          <option name="name" value="CPH2415" />[m
+[32m+[m[32m          <option name="screenDensity" value="480" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2412" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="OPPO" />[m
+[32m+[m[32m          <option name="codename" value="OP573DL1" />[m
+[32m+[m[32m          <option name="id" value="OP573DL1" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="OPPO" />[m
+[32m+[m[32m          <option name="name" value="CPH2557" />[m
+[32m+[m[32m          <option name="screenDensity" value="480" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="28" />[m
+[32m+[m[32m          <option name="brand" value="DOCOMO" />[m
+[32m+[m[32m          <option name="codename" value="SH-01L" />[m
+[32m+[m[32m          <option name="id" value="SH-01L" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="SHARP" />[m
+[32m+[m[32m          <option name="name" value="AQUOS sense2 SH-01L" />[m
+[32m+[m[32m          <option name="screenDensity" value="480" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2160" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="Lenovo" />[m
+[32m+[m[32m          <option name="codename" value="TB330FU" />[m
+[32m+[m[32m          <option name="formFactor" value="Tablet" />[m
+[32m+[m[32m          <option name="id" value="TB330FU" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Lenovo" />[m
+[32m+[m[32m          <option name="name" value="Tab M11" />[m
+[32m+[m[32m          <option name="screenDensity" value="240" />[m
+[32m+[m[32m          <option name="screenX" value="1200" />[m
+[32m+[m[32m          <option name="screenY" value="1920" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a06" />[m
+[32m+[m[32m          <option name="id" value="a06" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy A06" />[m
+[32m+[m[32m          <option name="screenDensity" value="300" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1600" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a14m" />[m
+[32m+[m[32m          <option name="id" value="a14m" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-A145R" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2408" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a15" />[m
+[32m+[m[32m          <option name="id" value="a15" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="A15" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a15x" />[m
+[32m+[m[32m          <option name="id" value="a15x" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="A15 5G" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a16" />[m
+[32m+[m[32m          <option name="id" value="a16" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-A165M" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a16x" />[m
+[32m+[m[32m          <option name="id" value="a16x" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="A16 5G" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a26x" />[m
+[32m+[m[32m          <option name="id" value="a26x" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-A266B" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a35x" />[m
+[32m+[m[32m          <option name="id" value="a35x" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="A35" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a36xq" />[m
+[32m+[m[32m          <option name="id" value="a36xq" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-A366E" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="a56x" />[m
+[32m+[m[32m          <option name="id" value="a56x" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-A566E" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="akita" />[m
+[32m+[m[32m          <option name="id" value="akita" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 8a" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="akita" />[m
+[32m+[m[32m          <option name="id" value="akita" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 8a" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="arcfox" />[m
+[32m+[m[32m          <option name="id" value="arcfox" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="razr plus 2024" />[m
+[32m+[m[32m          <option name="screenDensity" value="360" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="1272" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="austin" />[m
+[32m+[m[32m          <option name="id" value="austin" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g 5G (2022)" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1600" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="b0q" />[m
+[32m+[m[32m          <option name="id" value="b0q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S22 Ultra" />[m
+[32m+[m[32m          <option name="screenDensity" value="600" />[m
+[32m+[m[32m          <option name="screenX" value="1440" />[m
+[32m+[m[32m          <option name="screenY" value="3088" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="b6q" />[m
+[32m+[m[32m          <option name="id" value="b6q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Flip 6" />[m
+[32m+[m[32m          <option name="screenDensity" value="340" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2640" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="blazer" />[m
+[32m+[m[32m          <option name="id" value="blazer" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 10 Pro" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2410" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="32" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="bluejay" />[m
+[32m+[m[32m          <option name="id" value="bluejay" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 6a" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="caiman" />[m
+[32m+[m[32m          <option name="id" value="caiman" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9 Pro" />[m
+[32m+[m[32m          <option name="screenDensity" value="360" />[m
+[32m+[m[32m          <option name="screenX" value="960" />[m
+[32m+[m[32m          <option name="screenY" value="2142" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="caiman" />[m
+[32m+[m[32m          <option name="id" value="caiman" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9 Pro" />[m
+[32m+[m[32m          <option name="screenDensity" value="360" />[m
+[32m+[m[32m          <option name="screenX" value="960" />[m
+[32m+[m[32m          <option name="screenY" value="2142" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="comet" />[m
+[32m+[m[32m          <option name="default" value="true" />[m
+[32m+[m[32m          <option name="id" value="comet" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9 Pro Fold" />[m
+[32m+[m[32m          <option name="screenDensity" value="390" />[m
+[32m+[m[32m          <option name="screenX" value="2076" />[m
+[32m+[m[32m          <option name="screenY" value="2152" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="comet" />[m
+[32m+[m[32m          <option name="default" value="true" />[m
+[32m+[m[32m          <option name="id" value="comet" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9 Pro Fold" />[m
+[32m+[m[32m          <option name="screenDensity" value="390" />[m
+[32m+[m[32m          <option name="screenX" value="2076" />[m
+[32m+[m[32m          <option name="screenY" value="2152" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="29" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="crownqlteue" />[m
+[32m+[m[32m          <option name="id" value="crownqlteue" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy Note9" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="2220" />[m
+[32m+[m[32m          <option name="screenY" value="1080" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="dm1q" />[m
+[32m+[m[32m          <option name="id" value="dm1q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="S23" />[m
+[32m+[m[32m          <option name="screenDensity" value="480" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="dm2q" />[m
+[32m+[m[32m          <option name="id" value="dm2q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="S23 Plus" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="dm3q" />[m
+[32m+[m[32m          <option name="id" value="dm3q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S23 Ultra" />[m
+[32m+[m[32m          <option name="screenDensity" value="600" />[m
+[32m+[m[32m          <option name="screenX" value="1440" />[m
+[32m+[m[32m          <option name="screenY" value="3088" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="dubai" />[m
+[32m+[m[32m          <option name="id" value="dubai" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="edge 30" />[m
+[32m+[m[32m          <option name="screenDensity" value="405" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="e1q" />[m
+[32m+[m[32m          <option name="default" value="true" />[m
+[32m+[m[32m          <option name="id" value="e1q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S24" />[m
+[32m+[m[32m          <option name="screenDensity" value="480" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="e3q" />[m
+[32m+[m[32m          <option name="id" value="e3q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S24 Ultra" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1440" />[m
+[32m+[m[32m          <option name="screenY" value="3120" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="eos" />[m
+[32m+[m[32m          <option name="id" value="eos" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Eos" />[m
+[32m+[m[32m          <option name="screenDensity" value="320" />[m
+[32m+[m[32m          <option name="screenX" value="384" />[m
+[32m+[m[32m          <option name="screenY" value="384" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="felix" />[m
+[32m+[m[32m          <option name="id" value="felix" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel Fold" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="2208" />[m
+[32m+[m[32m          <option name="screenY" value="1840" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="felix" />[m
+[32m+[m[32m          <option name="id" value="felix" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel Fold" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="2208" />[m
+[32m+[m[32m          <option name="screenY" value="1840" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="felix_camera" />[m
+[32m+[m[32m          <option name="id" value="felix_camera" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel Fold (Camera-enabled)" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="2208" />[m
+[32m+[m[32m          <option name="screenY" value="1840" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="fogona" />[m
+[32m+[m[32m          <option name="id" value="fogona" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g play - 2024" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1600" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="fogos" />[m
+[32m+[m[32m          <option name="id" value="fogos" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g34 5G" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1600" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="frankel" />[m
+[32m+[m[32m          <option name="id" value="frankel" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 10" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2424" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="g0q" />[m
+[32m+[m[32m          <option name="id" value="g0q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-S906U1" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gta9pwifi" />[m
+[32m+[m[32m          <option name="id" value="gta9pwifi" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-X210" />[m
+[32m+[m[32m          <option name="screenDensity" value="240" />[m
+[32m+[m[32m          <option name="screenX" value="1200" />[m
+[32m+[m[32m          <option name="screenY" value="1920" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gts7lwifi" />[m
+[32m+[m[32m          <option name="id" value="gts7lwifi" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-T870" />[m
+[32m+[m[32m          <option name="screenDensity" value="340" />[m
+[32m+[m[32m          <option name="screenX" value="1600" />[m
+[32m+[m[32m          <option name="screenY" value="2560" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gts7xllite" />[m
+[32m+[m[32m          <option name="id" value="gts7xllite" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-T738U" />[m
+[32m+[m[32m          <option name="screenDensity" value="340" />[m
+[32m+[m[32m          <option name="screenX" value="1600" />[m
+[32m+[m[32m          <option name="screenY" value="2560" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gts8uwifi" />[m
+[32m+[m[32m          <option name="formFactor" value="Tablet" />[m
+[32m+[m[32m          <option name="id" value="gts8uwifi" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy Tab S8 Ultra" />[m
+[32m+[m[32m          <option name="screenDensity" value="320" />[m
+[32m+[m[32m          <option name="screenX" value="1848" />[m
+[32m+[m[32m          <option name="screenY" value="2960" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gts8wifi" />[m
+[32m+[m[32m          <option name="formFactor" value="Tablet" />[m
+[32m+[m[32m          <option name="id" value="gts8wifi" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy Tab S8" />[m
+[32m+[m[32m          <option name="screenDensity" value="274" />[m
+[32m+[m[32m          <option name="screenX" value="1600" />[m
+[32m+[m[32m          <option name="screenY" value="2560" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gts9fe" />[m
+[32m+[m[32m          <option name="id" value="gts9fe" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy Tab S9 FE 5G" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="1440" />[m
+[32m+[m[32m          <option name="screenY" value="2304" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="gts9wifi" />[m
+[32m+[m[32m          <option name="id" value="gts9wifi" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-X710" />[m
+[32m+[m[32m          <option name="screenDensity" value="340" />[m
+[32m+[m[32m          <option name="screenX" value="1600" />[m
+[32m+[m[32m          <option name="screenY" value="2560" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="husky" />[m
+[32m+[m[32m          <option name="id" value="husky" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 8 Pro" />[m
+[32m+[m[32m          <option name="screenDensity" value="390" />[m
+[32m+[m[32m          <option name="screenX" value="1008" />[m
+[32m+[m[32m          <option name="screenY" value="2244" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="30" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="java" />[m
+[32m+[m[32m          <option name="id" value="java" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="G20" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1600" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="kansas" />[m
+[32m+[m[32m          <option name="id" value="kansas" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g - 2025" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1604" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="komodo" />[m
+[32m+[m[32m          <option name="id" value="komodo" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9 Pro XL" />[m
+[32m+[m[32m          <option name="screenDensity" value="360" />[m
+[32m+[m[32m          <option name="screenX" value="1008" />[m
+[32m+[m[32m          <option name="screenY" value="2244" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="komodo" />[m
+[32m+[m[32m          <option name="id" value="komodo" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9 Pro XL" />[m
+[32m+[m[32m          <option name="screenDensity" value="360" />[m
+[32m+[m[32m          <option name="screenX" value="1008" />[m
+[32m+[m[32m          <option name="screenY" value="2244" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="lamul" />[m
+[32m+[m[32m          <option name="id" value="lamul" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g05" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1604" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="lion" />[m
+[32m+[m[32m          <option name="id" value="lion" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g04" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1612" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="lynx" />[m
+[32m+[m[32m          <option name="id" value="lynx" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 7a" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="lyriq" />[m
+[32m+[m[32m          <option name="id" value="lyriq" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="edge 40" />[m
+[32m+[m[32m          <option name="screenDensity" value="400" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="manaus" />[m
+[32m+[m[32m          <option name="id" value="manaus" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="edge 40 neo" />[m
+[32m+[m[32m          <option name="screenDensity" value="400" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="motorola" />[m
+[32m+[m[32m          <option name="codename" value="maui" />[m
+[32m+[m[32m          <option name="id" value="maui" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Motorola" />[m
+[32m+[m[32m          <option name="name" value="moto g play - 2023" />[m
+[32m+[m[32m          <option name="screenDensity" value="280" />[m
+[32m+[m[32m          <option name="screenX" value="720" />[m
+[32m+[m[32m          <option name="screenY" value="1600" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="mustang" />[m
+[32m+[m[32m          <option name="id" value="mustang" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 10 Pro XL" />[m
+[32m+[m[32m          <option name="screenDensity" value="390" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2404" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="o1q" />[m
+[32m+[m[32m          <option name="id" value="o1q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S21" />[m
+[32m+[m[32m          <option name="screenDensity" value="421" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="31" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="oriole" />[m
+[32m+[m[32m          <option name="id" value="oriole" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 6" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="pa2q" />[m
+[32m+[m[32m          <option name="id" value="pa2q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="S25+" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="pa3q" />[m
+[32m+[m[32m          <option name="id" value="pa3q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S25 Ultra" />[m
+[32m+[m[32m          <option name="screenDensity" value="600" />[m
+[32m+[m[32m          <option name="screenX" value="1440" />[m
+[32m+[m[32m          <option name="screenY" value="3120" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="panther" />[m
+[32m+[m[32m          <option name="id" value="panther" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 7" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="psq" />[m
+[32m+[m[32m          <option name="id" value="psq" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S25 Edge" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1440" />[m
+[32m+[m[32m          <option name="screenY" value="3120" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="q5q" />[m
+[32m+[m[32m          <option name="id" value="q5q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy Z Fold5" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1812" />[m
+[32m+[m[32m          <option name="screenY" value="2176" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="q6q" />[m
+[32m+[m[32m          <option name="id" value="q6q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy Z Fold6" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1856" />[m
+[32m+[m[32m          <option name="screenY" value="2160" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="30" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="r11" />[m
+[32m+[m[32m          <option name="formFactor" value="Wear OS" />[m
+[32m+[m[32m          <option name="id" value="r11" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel Watch" />[m
+[32m+[m[32m          <option name="screenDensity" value="320" />[m
+[32m+[m[32m          <option name="screenX" value="384" />[m
+[32m+[m[32m          <option name="screenY" value="384" />[m
+[32m+[m[32m          <option name="type" value="WEAR_OS" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="r11q" />[m
+[32m+[m[32m          <option name="id" value="r11q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-S711U" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="rango" />[m
+[32m+[m[32m          <option name="id" value="rango" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 10 Pro Fold" />[m
+[32m+[m[32m          <option name="screenDensity" value="390" />[m
+[32m+[m[32m          <option name="screenX" value="2076" />[m
+[32m+[m[32m          <option name="screenY" value="2152" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="30" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="redfin" />[m
+[32m+[m[32m          <option name="id" value="redfin" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 5" />[m
+[32m+[m[32m          <option name="screenDensity" value="440" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2340" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="shiba" />[m
+[32m+[m[32m          <option name="id" value="shiba" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 8" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="t2q" />[m
+[32m+[m[32m          <option name="id" value="t2q" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="Galaxy S21 Plus" />[m
+[32m+[m[32m          <option name="screenDensity" value="394" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2400" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="33" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="tangorpro" />[m
+[32m+[m[32m          <option name="formFactor" value="Tablet" />[m
+[32m+[m[32m          <option name="id" value="tangorpro" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel Tablet" />[m
+[32m+[m[32m          <option name="screenDensity" value="320" />[m
+[32m+[m[32m          <option name="screenX" value="1600" />[m
+[32m+[m[32m          <option name="screenY" value="2560" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="tegu" />[m
+[32m+[m[32m          <option name="id" value="tegu" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9a" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2424" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="tokay" />[m
+[32m+[m[32m          <option name="default" value="true" />[m
+[32m+[m[32m          <option name="id" value="tokay" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2424" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="35" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="tokay" />[m
+[32m+[m[32m          <option name="default" value="true" />[m
+[32m+[m[32m          <option name="id" value="tokay" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2424" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="36" />[m
+[32m+[m[32m          <option name="brand" value="google" />[m
+[32m+[m[32m          <option name="codename" value="tokay" />[m
+[32m+[m[32m          <option name="default" value="true" />[m
+[32m+[m[32m          <option name="id" value="tokay" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Google" />[m
+[32m+[m[32m          <option name="name" value="Pixel 9" />[m
+[32m+[m[32m          <option name="screenDensity" value="420" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2424" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m        <PersistentDeviceSelectionData>[m
+[32m+[m[32m          <option name="api" value="34" />[m
+[32m+[m[32m          <option name="brand" value="samsung" />[m
+[32m+[m[32m          <option name="codename" value="xcover7" />[m
+[32m+[m[32m          <option name="id" value="xcover7" />[m
+[32m+[m[32m          <option name="labId" value="google" />[m
+[32m+[m[32m          <option name="manufacturer" value="Samsung" />[m
+[32m+[m[32m          <option name="name" value="SM-G556B" />[m
+[32m+[m[32m          <option name="screenDensity" value="450" />[m
+[32m+[m[32m          <option name="screenX" value="1080" />[m
+[32m+[m[32m          <option name="screenY" value="2408" />[m
+[32m+[m[32m        </PersistentDeviceSelectionData>[m
+[32m+[m[32m      </list>[m
+[32m+[m[32m    </option>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/.idea/gradle.xml b/app/.idea/gradle.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b838237[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/gradle.xml[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="GradleSettings">[m
+[32m+[m[32m    <option name="linkedExternalProjectsSettings">[m
+[32m+[m[32m      <GradleProjectSettings>[m
+[32m+[m[32m        <option name="testRunner" value="CHOOSE_PER_TEST" />[m
+[32m+[m[32m        <option name="externalProjectPath" value="$PROJECT_DIR$" />[m
+[32m+[m[32m        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />[m
+[32m+[m[32m      </GradleProjectSettings>[m
+[32m+[m[32m    </option>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/.idea/migrations.xml b/app/.idea/migrations.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f8051a6[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/migrations.xml[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectMigrations">[m
+[32m+[m[32m    <option name="MigrateToGradleLocalJavaHome">[m
+[32m+[m[32m      <set>[m
+[32m+[m[32m        <option value="$PROJECT_DIR$" />[m
+[32m+[m[32m      </set>[m
+[32m+[m[32m    </option>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/.idea/misc.xml b/app/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3040d03[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/misc.xml[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ExternalStorageConfigurationManager" enabled="true" />[m
+[32m+[m[32m  <component name="ProjectRootManager">[m
+[32m+[m[32m    <output url="file://$PROJECT_DIR$/build/classes" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="ProjectType">[m
+[32m+[m[32m    <option name="id" value="Android" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/.idea/runConfigurations.xml b/app/.idea/runConfigurations.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..16660f1[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/runConfigurations.xml[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="RunConfigurationProducerService">[m
+[32m+[m[32m    <option name="ignoredProducers">[m
+[32m+[m[32m      <set>[m
+[32m+[m[32m        <option value="com.intellij.execution.junit.AbstractAllInDirectoryConfigurationProducer" />[m
+[32m+[m[32m        <option value="com.intellij.execution.junit.AllInPackageConfigurationProducer" />[m
+[32m+[m[32m        <option value="com.intellij.execution.junit.PatternConfigurationProducer" />[m
+[32m+[m[32m        <option value="com.intellij.execution.junit.TestInClassConfigurationProducer" />[m
+[32m+[m[32m        <option value="com.intellij.execution.junit.UniqueIdConfigurationProducer" />[m
+[32m+[m[32m        <option value="com.intellij.execution.junit.testDiscovery.JUnitTestDiscoveryConfigurationProducer" />[m
+[32m+[m[32m        <option value="org.jetbrains.kotlin.idea.junit.KotlinJUnitRunConfigurationProducer" />[m
+[32m+[m[32m        <option value="org.jetbrains.kotlin.idea.junit.KotlinPatternConfigurationProducer" />[m
+[32m+[m[32m      </set>[m
+[32m+[m[32m    </option>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/.idea/vcs.xml b/app/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6c0b863[m
+[1m--- /dev/null[m
+[1m+++ b/app/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml[m
+[1mindex ee75b07..fd1e7ba 100644[m
+[1m--- a/app/src/main/AndroidManifest.xml[m
+[1m+++ b/app/src/main/AndroidManifest.xml[m
+[36m@@ -12,6 +12,9 @@[m
+         android:supportsRtl="true"[m
+         android:theme="@style/Theme.AppMovies"[m
+         tools:targetApi="31">[m
+[32m+[m[32m        <activity[m
+[32m+[m[32m            android:name=".Detalhes"[m
+[32m+[m[32m            android:exported="false" />[m
+         <activity[m
+             android:name=".MainActivity"[m
+             android:exported="true">[m
+[1mdiff --git a/app/src/main/java/com/example/appmovies/BuscarDetalhes.kt b/app/src/main/java/com/example/appmovies/BuscarDetalhes.kt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..48af7b1[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/appmovies/BuscarDetalhes.kt[m
+[36m@@ -0,0 +1,98 @@[m
+[32m+[m[32mpackage com.example.appmovies[m
+[32m+[m
+[32m+[m[32mimport com.example.appmovies.FilmeRepositorio.Filme[m
+[32m+[m[32mimport kotlin.collections.find[m
+[32m+[m
+[32m+[m[32mclass BuscarDetalhes {[m
+[32m+[m
+[32m+[m[32m    data class Detalhes(val id : Int, val img : Int, val titulo : String, val sinopse : String)[m
+[32m+[m
+[32m+[m[32m    private val listDetalhes: List<Detalhes> = listOf([m
+[32m+[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            1,[m
+[32m+[m[32m            R.drawable.harrypotter,[m
+[32m+[m[32m            "Harry Potter e o Prisioneiro de Azkaban",[m
+[32m+[m[32m            "O perigoso assassino Sirius Black foge da prisão de Azkaban, e todos acreditam que ele está indo atrás de Harry Potter. Para proteger Hogwarts, o Ministério da Magia envia os aterrorizantes Dementadores.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Harry, Rony e Hermione investigam a verdade por trás da fuga de Black e descobrem que ele era o melhor amigo dos pais de Harry, tendo sido falsamente acusado de traí-los para Voldemort e assassinar o verdadeiro traidor, Pedro Pettigrew.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Com a ajuda do Professor Lupin e de um Vira-Tempo, eles salvam Black da execução, provando sua inocência. No final, Black foge e Harry ganha um padrinho, mudando sua vida para sempre."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            2,[m
+[32m+[m[32m            R.drawable.it,[m
+[32m+[m[32m            "It: A Coisa (It)",[m
+[32m+[m[32m            "Na pacata, mas assombrada, cidade de Derry, Maine, uma entidade maligna e sobrenatural conhecida como \"A Coisa\" ou Pennywise (o palhaço dançarino) ressurge a cada 27 anos para se alimentar, aterrorizando e devorando crianças.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Um grupo de adolescentes excluídos, que se autodenominam o \"Clube dos Perdedores\", é forçado a confrontar seus maiores medos (que a Coisa usa para se manifestar) após o irmão mais novo do líder, Bill Denbrough, ser morto.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Eles fazem um juramento de sangue para destruir a criatura. Anos depois, já adultos, eles precisam se reunir para cumprir essa promessa e enfrentar Pennywise uma última vez. A história lida com o poder da amizade, o trauma da infância e a superação do mal através da união."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            3,[m
+[32m+[m[32m            R.drawable.edm,[m
+[32m+[m[32m            "Esposa de Mentirinha",[m
+[32m+[m[32m            "Danny Maccabee (Adam Sandler) é um cirurgião plástico que, após uma desilusão amorosa no passado, descobre que usar uma aliança de casamento e contar histórias tristes sobre um \"divórcio iminente\" é a maneira perfeita de conquistar mulheres sem compromisso.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Sua vida como solteirão se complica quando ele conhece Palmer (Brooklyn Decker), uma jovem professora por quem ele realmente se apaixona. Para conquistá-la de vez, Danny inventa a maior mentira de todas: ele diz que é casado, mas que está prestes a se divorciar.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Quando Palmer insiste em conhecer a \"esposa\" para ter certeza de que o casamento realmente acabou, Danny entra em pânico e pede ajuda à sua leal assistente, Katherine Murphy (Jennifer Aniston), uma mãe solteira, para fingir ser sua futura ex-esposa.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "A mentira cresce rapidamente quando os dois filhos de Katherine também são envolvidos e todo o grupo — Danny, Palmer, Katherine e as crianças — embarca em uma viagem ao Havaí. Lá, em meio a diversas situações hilárias e a aparição inesperada de uma antiga rival de Katherine (Nicole Kidman), a linha entre a mentira e a realidade começa a se apagar. Danny e Katherine percebem que a química entre eles é muito maior do que a simples parceria profissional, questionando quem é o verdadeiro amor de Danny."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            4,[m
+[32m+[m[32m            R.drawable.vingadores,[m
+[32m+[m[32m            "Vingadores: Ultimato",[m
+[32m+[m[32m            "Após Thanos eliminar metade de toda a vida no universo (o \"Estalo\"), os heróis sobreviventes dos Vingadores e seus aliados enfrentam a dor da perda.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Cinco anos depois, eles descobrem uma chance de reverter o dano usando o Reino Quântico para viajar no tempo e coletar as Joias do Infinito no passado.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "A missão é um sucesso, mas o ato traz o Thanos de 2014 para o presente. Os Vingadores, reunindo todos os seus aliados ressuscitados, travam uma batalha final épica contra o Titã. O sacrifício de Tony Stark (Homem de Ferro), usando as Joias para eliminar Thanos e seu exército, salva o universo e restaura toda a vida perdida."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            5,[m
+[32m+[m[32m            R.drawable.panico,[m
+[32m+[m[32m            "Pânico 5",[m
+[32m+[m[32m            "Vinte e cinco anos após os assassinatos originais de Woodsboro, um novo Ghostface (Assassino da Máscara) surge e começa a atacar um grupo de adolescentes que possuem alguma ligação com os crimes do passado.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "A principal protagonista é Sam Carpenter, que volta à sua cidade natal após o ataque à sua irmã, Tara. Sam carrega um segredo mortal: ela é a filha não reconhecida de Billy Loomis, um dos Ghostfaces originais.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Para sobreviver e descobrir a identidade do novo assassino, os jovens precisam da ajuda dos heróis lendários da franquia: Sidney Prescott, Gale Weathers e Dewey Riley. O filme é uma releitura meta-referencial do original, misturando a nova geração com a clássica, enquanto expõe as regras dos \"reboots-sequência\" de filmes de terror."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            6,[m
+[32m+[m[32m            R.drawable.pdc,[m
+[32m+[m[32m            "Piratas do caribe",[m
+[32m+[m[32m            "A jovem Elizabeth Swann é sequestrada pelos piratas amaldiçoados do Pérola Negra, liderados pelo Capitão Barbossa, que precisam dela para quebrar uma maldição de mortos-vivos.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "O ferreiro Will Turner, apaixonado por Elizabeth, alia-se ao excêntrico e carismático Capitão Jack Sparrow para persegui-los, resgatar Elizabeth e recuperar o navio de Jack.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Eles enfrentam os piratas amaldiçoados em uma aventura épica cheia de duelos e reviravoltas para quebrar o feitiço e restaurar a ordem no Caribe."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            7,[m
+[32m+[m[32m            R.drawable.titanic,[m
+[32m+[m[32m            "Titanic",[m
+[32m+[m[32m            "Em 1912, a jovem aristocrata Rose DeWitt Bukater, presa a um noivado infeliz, embarca no luxuoso navio Titanic. A bordo, ela conhece Jack Dawson, um artista pobre, e os dois iniciam um intenso e proibido romance, desafiando as barreiras sociais.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "A paixão é tragicamente interrompida quando o navio atinge um iceberg. O amor de Jack e Rose é colocado à prova em meio ao caos e ao pânico do naufrágio. O filme é um épico de romance e desastre, focado na luta deles pela sobrevivência."[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        Detalhes([m
+[32m+[m[32m            8,[m
+[32m+[m[32m            R.drawable.johnwick,[m
+[32m+[m[32m            "John Wick 3",[m
+[32m+[m[32m            "John Wick está em fuga em Manhattan com uma recompensa de US\$ 14 milhões pela sua cabeça, após ter violado a regra máxima do submundo dos assassinos: matar dentro do Hotel Continental.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Considerado \"excomungado\" pela Alta Cúpula, ele precisa lutar contra um exército de assassinos de elite que estão atrás dele, transformando-se de caçador em caça.\n" +[m
+[32m+[m[32m                    "\n" +[m
+[32m+[m[32m                    "Para sobreviver, John busca a ajuda de antigos aliados e tenta encontrar o caminho para o Ancião, a única figura capaz de perdoá-lo. O filme é uma jornada de ação brutal e coreografada, onde John Wick precisa \"preparar-se para a guerra\" e enfrentar as consequências de suas escolhas."[m
+[32m+[m[32m        )[m
+[32m+[m[32m    )[m
+[32m+[m[32m    fun getDetalhe(id: Int): Detalhes?{[m
+[32m+[m[32m        return listDetalhes.find { it.id == id }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/java/com/example/appmovies/Detalhes.kt b/app/src/main/java/com/example/appmovies/Detalhes.kt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..021d5ae[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/appmovies/Detalhes.kt[m
+[36m@@ -0,0 +1,48 @@[m
+[32m+[m[32mpackage com.example.appmovies[m
+[32m+[m
+[32m+[m[32mimport android.health.connect.datatypes.units.Length[m
+[32m+[m[32mimport android.os.Bundle[m
+[32m+[m[32mimport android.widget.ImageView[m
+[32m+[m[32mimport android.widget.TextView[m
+[32m+[m[32mimport android.widget.Toast[m
+[32m+[m[32mimport androidx.activity.enableEdgeToEdge[m
+[32m+[m[32mimport androidx.appcompat.app.AppCompatActivity[m
+[32m+[m[32mimport androidx.core.view.ViewCompat[m
+[32m+[m[32mimport androidx.core.view.WindowInsetsCompat[m
+[32m+[m
+[32m+[m[32mclass Detalhes : AppCompatActivity() {[m
+[32m+[m
+[32m+[m[32m    private val chave_id = "filme_id"[m
+[32m+[m
+[32m+[m[32m    override fun onCreate(savedInstanceState: Bundle?) {[m
+[32m+[m[32m        super.onCreate(savedInstanceState)[m
+[32m+[m[32m        enableEdgeToEdge()[m
+[32m+[m[32m        setContentView(R.layout.activity_detalhes)[m
+[32m+[m[32m        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->[m
+[32m+[m[32m            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())[m
+[32m+[m[32m            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)[m
+[32m+[m[32m            insets[m
+[32m+[m[32m        }[m
+[32m+[m[32m        val filmeId = intent.getIntExtra(chave_id, -1)[m
+[32m+[m[32m        val busca = BuscarDetalhes()[m
+[32m+[m
+[32m+[m[32m        val filmeCompleto = busca.getDetalhe(filmeId)[m
+[32m+[m
+[32m+[m[32m        if(filmeCompleto != null) {[m
+[32m+[m[32m            val img = findViewById<ImageView>(R.id.imgFilme)[m
+[32m+[m[32m            val titulo = findViewById<TextView>(R.id.titulo)[m
+[32m+[m[32m            val sinopse = findViewById<TextView>(R.id.sinopse)[m
+[32m+[m[32m            img.setImageResource(filmeCompleto.img)[m
+[32m+[m[32m            titulo.text = filmeCompleto.titulo[m
+[32m+[m[32m            sinopse.text = filmeCompleto.sinopse[m
+[32m+[m[32m        } else{[m
+[32m+[m[32m            val toast = Toast.makeText(this, "Erro ao carregar a página", Toast.LENGTH_SHORT)[m
+[32m+[m[32m            toast.show()[m
+[32m+[m[32m            finish()[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/java/com/example/appmovies/EmBreve.kt b/app/src/main/java/com/example/appmovies/EmBreve.kt[m
+[1mindex a7955fa..0c681f1 100644[m
+[1m--- a/app/src/main/java/com/example/appmovies/EmBreve.kt[m
+[1m+++ b/app/src/main/java/com/example/appmovies/EmBreve.kt[m
+[36m@@ -42,7 +42,7 @@[m [mclass EmBreve : Fragment() {[m
+     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {[m
+         super.onViewCreated(view, savedInstanceState)[m
+ [m
+[31m-        // Agora sim podemos usar findViewById pois a view foi criada[m
+[32m+[m
+         val btnF1 = view.findViewById<Button>(R.id.f1)[m
+         val btnF2 = view.findViewById<Button>(R.id.f2)[m
+         val btnF3 = view.findViewById<Button>(R.id.f3)[m
+[1mdiff --git a/app/src/main/java/com/example/appmovies/EmCartaz.kt b/app/src/main/java/com/example/appmovies/EmCartaz.kt[m
+[1mindex 2a23930..4fd5f7e 100644[m
+[1m--- a/app/src/main/java/com/example/appmovies/EmCartaz.kt[m
+[1m+++ b/app/src/main/java/com/example/appmovies/EmCartaz.kt[m
+[36m@@ -1,10 +1,12 @@[m
+ package com.example.appmovies[m
+ [m
+[32m+[m[32mimport android.content.Intent[m
+ import android.os.Bundle[m
+ import androidx.fragment.app.Fragment[m
+ import android.view.LayoutInflater[m
+ import android.view.View[m
+ import android.view.ViewGroup[m
+[32m+[m[32mimport android.widget.Button[m
+ [m
+ // TODO: Rename parameter arguments, choose names that match[m
+ // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER[m
+[36m@@ -37,6 +39,32 @@[m [mclass EmCartaz : Fragment() {[m
+         return inflater.inflate(R.layout.fragment_em_cartaz, container, false)[m
+     }[m
+ [m
+[32m+[m[32m    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {[m
+[32m+[m[32m        super.onViewCreated(view, savedInstanceState)[m
+[32m+[m
+[32m+[m[32m        val btnHarry = view.findViewById<Button>(R.id.btnHarry)[m
+[32m+[m[32m        val btnIt = view.findViewById<Button>(R.id.btnIt)[m
+[32m+[m[32m        val btnEdm = view.findViewById<Button>(R.id.btnEdm)[m
+[32m+[m[32m        val btnVing = view.findViewById<Button>(R.id.btnVing)[m
+[32m+[m[32m        val btnPanico = view.findViewById<Button>(R.id.btnPanico)[m
+[32m+[m[32m        val btnPiratas = view.findViewById<Button>(R.id.btnPiratas)[m
+[32m+[m[32m        val btnTitanic = view.findViewById<Button>(R.id.btnTitanic)[m
+[32m+[m[32m        val btnJohn = view.findViewById<Button>(R.id.btnJohn)[m
+[32m+[m
+[32m+[m[32m        val buttons = listOf(btnHarry, btnIt, btnEdm,btnVing,btnPanico,btnPiratas,btnTitanic, btnJohn)[m
+[32m+[m[32m        val intent = Intent(context, Detalhes::class.java)[m
+[32m+[m[32m        val chave_id = "filme_id"[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        buttons.forEach { button ->[m
+[32m+[m[32m            button.setOnClickListener { click ->[m
+[32m+[m[32m                val filme_id = click .tag.toString().toIntOrNull() ?: 0[m
+[32m+[m[32m                intent.putExtra(chave_id, filme_id)[m
+[32m+[m[32m                startActivity(intent)[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+     companion object {[m
+         /**[m
+          * Use this factory method to create a new instance of[m
+[1mdiff --git a/app/src/main/java/com/example/appmovies/FilmeRepositorio.kt b/app/src/main/java/com/example/appmovies/FilmeRepositorio.kt[m
+[1mindex 2a65a3d..f29d70f 100644[m
+[1m--- a/app/src/main/java/com/example/appmovies/FilmeRepositorio.kt[m
+[1m+++ b/app/src/main/java/com/example/appmovies/FilmeRepositorio.kt[m
+[36m@@ -38,9 +38,9 @@[m [mclass FilmeRepositorio {[m
+             "A trajetória de Senor Abravanel, o homem por trás do ícone Silvio Santos, desde vendedor de rua até se tornar um dos maiores apresentadores e empresários da televisão brasileira.",[m
+             R.drawable.silvio[m
+         )[m
+[31m-    )[m
+ [m
+ [m
+[32m+[m[32m    )[m
+     fun getFilme(id: Int): Filme?{[m
+         return listFilme.find { it.codigo == id }[m
+     }[m
+[1mdiff --git a/app/src/main/res/drawable/img_3.png b/app/src/main/res/drawable/edm.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_3.png[m
+[1mrename to app/src/main/res/drawable/edm.png[m
+[1mdiff --git a/app/src/main/res/drawable/img.png b/app/src/main/res/drawable/harrypotter.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img.png[m
+[1mrename to app/src/main/res/drawable/harrypotter.png[m
+[1mdiff --git a/app/src/main/res/drawable/img_1.png b/app/src/main/res/drawable/img_1.png[m
+[1mdeleted file mode 100644[m
+[1mindex e62d965..0000000[m
+Binary files a/app/src/main/res/drawable/img_1.png and /dev/null differ
+[1mdiff --git a/app/src/main/res/drawable/img_2.png b/app/src/main/res/drawable/img_2.png[m
+[1mdeleted file mode 100644[m
+[1mindex d36cb13..0000000[m
+Binary files a/app/src/main/res/drawable/img_2.png and /dev/null differ
+[1mdiff --git a/app/src/main/res/drawable/img_6.png b/app/src/main/res/drawable/img_6.png[m
+[1mdeleted file mode 100644[m
+[1mindex 4e29616..0000000[m
+Binary files a/app/src/main/res/drawable/img_6.png and /dev/null differ
+[1mdiff --git a/app/src/main/res/drawable/img_10.png b/app/src/main/res/drawable/it.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_10.png[m
+[1mrename to app/src/main/res/drawable/it.png[m
+[1mdiff --git a/app/src/main/res/drawable/john.jpg b/app/src/main/res/drawable/john.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex b380a2b..0000000[m
+Binary files a/app/src/main/res/drawable/john.jpg and /dev/null differ
+[1mdiff --git a/app/src/main/res/drawable/img_9.png b/app/src/main/res/drawable/johnwick.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_9.png[m
+[1mrename to app/src/main/res/drawable/johnwick.png[m
+[1mdiff --git a/app/src/main/res/drawable/img_5.png b/app/src/main/res/drawable/panico.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_5.png[m
+[1mrename to app/src/main/res/drawable/panico.png[m
+[1mdiff --git a/app/src/main/res/drawable/img_7.png b/app/src/main/res/drawable/pdc.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_7.png[m
+[1mrename to app/src/main/res/drawable/pdc.png[m
+[1mdiff --git a/app/src/main/res/drawable/img_8.png b/app/src/main/res/drawable/titanic.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_8.png[m
+[1mrename to app/src/main/res/drawable/titanic.png[m
+[1mdiff --git a/app/src/main/res/drawable/img_4.png b/app/src/main/res/drawable/vingadores.png[m
+[1msimilarity index 100%[m
+[1mrename from app/src/main/res/drawable/img_4.png[m
+[1mrename to app/src/main/res/drawable/vingadores.png[m
+[1mdiff --git a/app/src/main/res/layout/activity_detalhes.xml b/app/src/main/res/layout/activity_detalhes.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5acaf20[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/layout/activity_detalhes.xml[m
+[36m@@ -0,0 +1,41 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:app="http://schemas.android.com/apk/res-auto"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:id="@+id/main"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    tools:context=".Detalhes">[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    <View[m
+[32m+[m[32m        android:id="@+id/referencia"[m
+[32m+[m[32m        android:layout_width="0dp"[m
+[32m+[m[32m        android:layout_height="0dp"[m
+[32m+[m[32m        android:layout_centerHorizontal="true"/>[m
+[32m+[m[32m    <ImageView[m
+[32m+[m[32m        android:id="@+id/imgFilme"[m
+[32m+[m[32m        android:layout_width="300dp"[m
+[32m+[m[32m        android:layout_height="250dp"[m
+[32m+[m[32m        android:src="@drawable/sombras"[m
+[32m+[m[32m        android:layout_centerHorizontal="true"[m
+[32m+[m
+[32m+[m[32m        />[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:id="@+id/titulo"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_below="@+id/imgFilme"[m
+[32m+[m[32m        android:text="dasdasdasdasdsadasdadasda"[m
+[32m+[m[32m        android:layout_centerHorizontal="true"[m
+[32m+[m[32m        />[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:id="@+id/sinopse"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_below="@+id/titulo"[m
+[32m+[m[32m        android:layout_centerHorizontal="true"[m
+[32m+[m[32m        android:text="SinopseSinopseSinopseSinopseSinopseSinopse"[m
+[32m+[m[32m        />[m
+[32m+[m
+[32m+[m[32m</RelativeLayout>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/res/layout/fragment_em_cartaz.xml b/app/src/main/res/layout/fragment_em_cartaz.xml[m
+[1mindex adb8640..aad6f67 100644[m
+[1m--- a/app/src/main/res/layout/fragment_em_cartaz.xml[m
+[1m+++ b/app/src/main/res/layout/fragment_em_cartaz.xml[m
+[36m@@ -41,7 +41,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/titulo"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img"[m
+[32m+[m[32m                android:src="@drawable/harrypotter"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -109,6 +109,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnHarry"[m
+[32m+[m[32m                android:tag="1"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_fantasia"[m
+[36m@@ -128,7 +130,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_fantasia"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_10"[m
+[32m+[m[32m                android:src="@drawable/it"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+ [m
+[36m@@ -198,6 +200,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnIt"[m
+[32m+[m[32m                android:tag="2"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_terror"[m
+[36m@@ -218,7 +222,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_terror"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_3"[m
+[32m+[m[32m                android:src="@drawable/edm"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -284,18 +288,20 @@[m
+                 android:layout_toEndOf="@id/image_fantasia"[m
+                 />[m
+ [m
+[32m+[m
+[32m+[m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnEdm"[m
+[32m+[m[32m                android:tag="3"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_romance"[m
+[31m-                android:layout_toEndOf="@id/image_fantasia"[m
+                 android:layout_marginStart="10dp"[m
+[31m-                android:layout_marginTop="100dp"[m
+[31m-                android:textColor="@color/white"[m
+[31m-                android:text="Ver mais"[m
+[32m+[m[32m                android:layout_marginTop="99dp"[m
+[32m+[m[32m                android:layout_toEndOf="@id/image_fantasia"[m
+                 android:backgroundTint="#B40404"[m
+[31m-                />[m
+[31m-[m
+[32m+[m[32m                android:text="Ver mais"[m
+[32m+[m[32m                android:textColor="@color/white" />[m
+ [m
+             <!-- VINGADORES -->[m
+             <ImageView[m
+[36m@@ -304,7 +310,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_romance"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_4"[m
+[32m+[m[32m                android:src="@drawable/vingadores"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -372,6 +378,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnVing"[m
+[32m+[m[32m                android:tag="4"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_acao"[m
+[36m@@ -384,14 +392,14 @@[m
+                 />[m
+ [m
+ [m
+[31m-            <!-- TODO MUNDO EM PÂNICO -->[m
+[32m+[m[32m            <!-- PÂNICO 5-->[m
+             <ImageView[m
+                 android:id="@+id/image_terror2"[m
+                 android:layout_width="130dp"[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_acao"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_5"[m
+[32m+[m[32m                android:src="@drawable/panico"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -450,7 +458,7 @@[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@+id/text_view_acao"[m
+[31m-                android:text="Todo Mundo em Pânico 5"[m
+[32m+[m[32m                android:text="Pânico 5"[m
+                 android:textStyle="bold"[m
+                 android:textSize="17dp"[m
+                 android:layout_marginStart="5dp"[m
+[36m@@ -459,6 +467,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnPanico"[m
+[32m+[m[32m                android:tag="5"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_terror2"[m
+[36m@@ -479,7 +489,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_terror2"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_7"[m
+[32m+[m[32m                android:src="@drawable/pdc"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -546,6 +556,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnPiratas"[m
+[32m+[m[32m                android:tag="6"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_fantasia2"[m
+[36m@@ -566,7 +578,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_fantasia2"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_8"[m
+[32m+[m[32m                android:src="@drawable/titanic"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -633,6 +645,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnTitanic"[m
+[32m+[m[32m                android:tag="7"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_romance2"[m
+[36m@@ -653,7 +667,7 @@[m
+                 android:layout_height="193dp"[m
+                 android:layout_below="@id/image_romance2"[m
+                 android:layout_marginStart="5dp"[m
+[31m-                android:src="@drawable/img_9"[m
+[32m+[m[32m                android:src="@drawable/johnwick"[m
+                 android:layout_marginTop="20dp"/>[m
+ [m
+             <ImageView[m
+[36m@@ -721,6 +735,8 @@[m
+                 />[m
+ [m
+             <Button[m
+[32m+[m[32m                android:id="@+id/btnJohn"[m
+[32m+[m[32m                android:tag="8"[m
+                 android:layout_width="wrap_content"[m
+                 android:layout_height="wrap_content"[m
+                 android:layout_below="@id/text_view_acao2"[m
+[1mdiff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml[m
+[1mindex ee8cbf4..105de45 100644[m
+[1m--- a/app/src/main/res/values/colors.xml[m
+[1m+++ b/app/src/main/res/values/colors.xml[m
+[36m@@ -3,4 +3,5 @@[m
+     <color name="black">#FF000000</color>[m
+     <color name="white">#FFFFFFFF</color>[m
+     <color name="orange">#ffa500</color>[m
+[32m+[m
+ </resources>[m
+\ No newline at end of file[m

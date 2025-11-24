@@ -13,6 +13,7 @@ class FilmeRepositorio {
             "Wicked 2",
             "Após os eventos que abalaram Oz, Elphaba e Glinda enfrentam as consequências de suas escolhas, enquanto antigas alianças se rompem e novos perigos surgem em meio à luta entre magia, poder e amizade.",
             R.drawable.wicked
+
         ),
         Filme(
             2,

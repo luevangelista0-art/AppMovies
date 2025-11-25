@@ -10,19 +10,14 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/toolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-           >
-
+            android:layout_height="wrap_content">
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#B40404"
-
                     />
         </com.google.android.material.appbar.AppBarLayout>
-
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
@@ -46,12 +41,5 @@
             android:layout_below="@id/toolbarLayout"
             app:defaultNavHost="true"
             app:navGraph="@navigation/my_nav"
-
             />
-
-
-
-
-
-
 </RelativeLayout>

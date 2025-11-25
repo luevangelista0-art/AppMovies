@@ -9,6 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.appmovies.recyclerview.adapter.HorariosAdapter
 
 class Detalhes : AppCompatActivity() {
 
@@ -35,11 +38,23 @@ class Detalhes : AppCompatActivity() {
             img.setImageResource(filmeCompleto.img)
             titulo.text = filmeCompleto.titulo
             sinopse.text = filmeCompleto.sinopse
+
+            val recycler = findViewById<RecyclerView>(R.id.recyclerView)
+
+            val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            recycler.layoutManager = layoutManager
+
+
+            val adapter = HorariosAdapter(this, filmeCompleto.sessoes)
+            recycler.adapter = adapter
+
         } else{
             val toast = Toast.makeText(this, "Erro ao carregar a página", Toast.LENGTH_SHORT)
             toast.show()
             finish()
         }
+
+
 
 
 

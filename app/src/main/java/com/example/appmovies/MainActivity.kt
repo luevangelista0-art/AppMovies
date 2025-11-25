@@ -2,6 +2,7 @@ package com.example.appmovies
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,16 +29,31 @@ class MainActivity : AppCompatActivity() {
             view.updatePadding(
                 top = systemBarsInsets.top
             )
-
             insets
         }
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
+
         bottomNav.post {
             val navController = findNavController(R.id.fragmentContainerView)
             bottomNav.setupWithNavController(navController)
 
+            navController.addOnDestinationChangedListener { _, destination, _ ->
+
+                // NOVO CÓDIGO AQUI:
+
+                // O ID do Fragment de login (definido no seu nav_graph.xml)
+                if (destination.id == R.id.telaInicial) { // Substitua R.id.loginFragment pelo ID correto do seu Fragment inicial
+                    // Esconde as duas barras
+                    bottomNav.visibility = View.GONE
+                    barLayout.visibility = View.GONE
+                } else {
+                    // Mostra as duas barras em qualquer outro Fragment
+                    bottomNav.visibility = View.VISIBLE
+                    barLayout.visibility = View.VISIBLE
+                }
+            }
         }
 
         val toolbar = findViewById<Toolbar>( R.id.toolbar)

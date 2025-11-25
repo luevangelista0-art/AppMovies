@@ -6,195 +6,211 @@
     android:id="@+id/fragEmBreve"
     tools:context=".EmBreve">
 
-    <RelativeLayout
-        android:id="@+id/main"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="15dp">
 
         <TextView
             android:id="@+id/emBreveTitulo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
             android:text="Em Breve"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="20dp"/>
 
-        <LinearLayout
-            android:id="@+id/filmes"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#B40404"
+            android:layout_marginBottom="16dp"
+            />
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/emBreveTitulo"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
+            android:layout_marginBottom="20dp">
 
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/wickedPoster"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/wicked" />
+
+            <TextView
+                android:id="@+id/wickedTxt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="Wicked 2"
+                android:layout_toEndOf="@+id/wickedPoster"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp" />
 
-                <ImageView
-                    android:id="@+id/wickedPoster"
-                    android:layout_width="130dp"
-                    android:layout_height="193dp"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/wicked" />
-                <TextView
-                    android:id="@+id/wickedTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wicked 2"
-                    android:layout_toRightOf="@+id/wickedPoster"
-                    android:textStyle="bold"
-                    android:textSize="17dp"
-                    android:layout_marginStart="5dp"/>
-                <Button
-                    android:id="@+id/f1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/wickedTxt"
-                    android:layout_toRightOf="@+id/wickedPoster"
-                    android:text="Ver mais"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <Button
+                android:id="@+id/f1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wickedTxt"
+                android:layout_toEndOf="@+id/wickedPoster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp" android:backgroundTint="#B40404"
+                android:textColor="@android:color/white"
+                android:text="Ver mais"
+                />
 
-                <ImageView
-                    android:id="@+id/truquePoster"
-                    android:layout_width="130dp"
-                    android:layout_height="193dp"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/truque"
-                    android:layout_marginTop="15dp"/>
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/truqueTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/truquePoster"
-                    android:text="Truque de Mestre: O 3º Ato"
-                    android:textStyle="bold"
-                    android:textSize="17dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="5dp"/>
-                <Button
-                    android:id="@+id/f2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/truqueTxt"
-                    android:layout_toRightOf="@+id/truquePoster"
-                    android:text="Ver mais"
-                    />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/truquePoster"
+                android:layout_width="130dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/truque"
+                />
+
+            <TextView
+                android:id="@+id/truqueTxt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/truquePoster"
+                android:text="Truque de Mestre: O 3º Ato"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp" android:layout_marginStart="5dp"
+                />
 
-                <ImageView
-                    android:id="@+id/sombrasPoster"
-                    android:layout_width="132dp"
-                    android:layout_height="193dp"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/sombras"
-                    android:layout_marginTop="15dp"/>
-
-                <TextView
-                    android:id="@+id/sombrasTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sombras do Deserto"
-                    android:textStyle="bold"
-                    android:textSize="17dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_toRightOf="@id/sombrasPoster"/>
-                <Button
-                    android:id="@+id/f3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/sombrasTxt"
-                    android:layout_toRightOf="@+id/sombrasPoster"
-                    android:text="Ver mais"
-                    />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <Button
+                android:id="@+id/f2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/truqueTxt"
+                android:layout_toEndOf="@+id/truquePoster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp" android:backgroundTint="#B40404"
+                android:textColor="@android:color/white"
+                android:text="Ver mais"
+                />
+        </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/eddPoster"
-                    android:layout_width="132dp"
-                    android:layout_height="193dp"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/edd"
-                    android:layout_marginTop="15dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
-                <TextView
-                    android:id="@+id/eddTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Eddington"
-                    android:textStyle="bold"
-                    android:textSize="17dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_toRightOf="@+id/eddPoster"/>
-                <Button
-                    android:id="@+id/f4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/eddTxt"
-                    android:layout_toRightOf="@+id/eddPoster"
-                    android:text="Ver mais"
-                    />
-            </RelativeLayout>
+            <ImageView
+                android:id="@+id/sombrasPoster"
+                android:layout_width="132dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/sombras"
+                />
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/sombrasTxt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="Sombras do Deserto"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp" android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/sombrasPoster"/>
 
-                <ImageView
-                    android:id="@+id/silvioPoster"
-                    android:layout_width="165dp"
-                    android:layout_height="193dp"
-                    android:layout_marginStart="-12dp"
-                    android:src="@drawable/silvio"
-                    android:layout_marginTop="15dp"/>
+            <Button
+                android:id="@+id/f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sombrasTxt"
+                android:layout_toEndOf="@+id/sombrasPoster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp" android:backgroundTint="#B40404"
+                android:textColor="@android:color/white"
+                android:text="Ver mais"
+                />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/silvioTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Silvio Santos Vem Aí"
-                    android:textStyle="bold"
-                    android:textSize="17dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_toRightOf="@id/silvioPoster"
-                    />
-                <Button
-                    android:id="@+id/f5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/silvioTxt"
-                    android:layout_toRightOf="@+id/silvioPoster"
-                    android:text="Ver mais"
-                    />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
+            <ImageView
+                android:id="@+id/eddPoster"
+                android:layout_width="132dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/edd"
+                />
 
+            <TextView
+                android:id="@+id/eddTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eddington"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp" android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/eddPoster"/>
 
+            <Button
+                android:id="@+id/f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/eddTxt"
+                android:layout_toEndOf="@+id/eddPoster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp" android:backgroundTint="#B40404"
+                android:textColor="@android:color/white"
+                android:text="Ver mais"
+                />
+        </RelativeLayout>
 
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
+            <ImageView
+                android:id="@+id/silvioPoster"
+                android:layout_width="165dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="-12dp"
+                android:src="@drawable/silvio"
+                />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/silvioTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silvio Santos Vem Aí"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp" android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/silvioPoster"
+                />
 
+            <Button
+                android:id="@+id/f5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/silvioTxt"
+                android:layout_toEndOf="@+id/silvioPoster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp" android:backgroundTint="#B40404"
+                android:textColor="@android:color/white"
+                android:text="Ver mais"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
 </ScrollView>

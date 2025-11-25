@@ -5,37 +5,92 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".Detalhes">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/red"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/white" />
 
-    <View
-        android:id="@+id/referencia"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_centerHorizontal="true"/>
-    <ImageView
-        android:id="@+id/imgFilme"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:src="@drawable/sombras"
-        android:layout_centerHorizontal="true"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
 
-        />
-    <TextView
-        android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgFilme"
-        android:text="titulo"
-        android:layout_centerHorizontal="true"
-        />
-    <TextView
-        android:id="@+id/sinopse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/titulo"
-        android:layout_centerHorizontal="true"
-        android:text="SinopseSinopseSinopseSinopseSinopseSinopse"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imgCard"
+                android:layout_width="250dp"
+                android:layout_height="350dp"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:id="@+id/imgFilme"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sombras" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgCard"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="Título do Filme"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sinopse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titulo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:text="Sinopse..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/horarios_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sinopse"
+                android:layout_marginTop="24dp"
+                android:layout_centerHorizontal="true"
+                android:text="Horários"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/red"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/horarios_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

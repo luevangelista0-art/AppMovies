@@ -50,19 +50,19 @@ class EmBreve : Fragment() {
         val btnF5 = view.findViewById<Button>(R.id.f5)
 
         btnF1.setOnClickListener {
-            popup(context = requireContext(), filmeId = 1, audioId = 2, localId = 1)
+            popup(context = requireContext(), filmeId = 1)
         }
         btnF2.setOnClickListener {
-            popup(context = requireContext(), filmeId = 2, audioId = 2, localId = 1)
+            popup(context = requireContext(), filmeId = 2)
         }
         btnF3.setOnClickListener {
-            popup(context = requireContext(), filmeId = 3, audioId = 1, localId = 1)
+            popup(context = requireContext(), filmeId = 3)
         }
         btnF4.setOnClickListener {
-            popup(context = requireContext(), filmeId = 4, audioId = 2, localId = 1)
+            popup(context = requireContext(), filmeId = 4)
         }
         btnF5.setOnClickListener {
-            popup(context = requireContext(), filmeId = 5, audioId = 1, localId = 1)
+            popup(context = requireContext(), filmeId = 5)
         }
     }
 

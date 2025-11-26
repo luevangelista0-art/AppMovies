@@ -17,6 +17,7 @@ class HorariosAdapter (
             binding.horario.text = sessao.horario
             binding.local.text = sessao.local
             binding.tipo.text = sessao.tipoSessao
+            binding.sala.text = sessao.sala
         }
     }
 

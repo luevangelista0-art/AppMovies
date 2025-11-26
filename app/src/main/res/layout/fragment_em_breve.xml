@@ -186,6 +186,7 @@
                 android:layout_height="193dp"
                 android:layout_marginStart="-12dp"
                 android:src="@drawable/silvio"
+
                 />
 
             <TextView
@@ -195,7 +196,7 @@
                 android:text="Silvio Santos Vem Aí"
                 android:textStyle="bold"
                 android:textSize="17dp"
-                android:layout_marginTop="5dp" android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_toEndOf="@id/silvioPoster"
                 />
 
@@ -205,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/silvioTxt"
                 android:layout_toEndOf="@+id/silvioPoster"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="10dp" android:backgroundTint="#B40404"
                 android:textColor="@android:color/white"
                 android:text="Ver mais"

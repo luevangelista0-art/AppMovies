@@ -4,18 +4,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/toolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp"
+            android:background="#B40404"
+            android:fitsSystemWindows="true">
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#B40404"
+
                     />
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -30,6 +31,9 @@
             app:menu="@menu/bottom_menu"
             app:itemGravity="center"
             app:itemRippleColor="@null"
+            app:itemIconTint="@color/red"
+            app:itemTextColor="@color/white"
+            android:background="@color/black"
             />
 
         <androidx.fragment.app.FragmentContainerView

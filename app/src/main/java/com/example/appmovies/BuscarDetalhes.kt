@@ -5,7 +5,7 @@ import kotlin.collections.find
 
 class BuscarDetalhes {
 
-    data class Sessao(val idSessao : Int, val horario : String, val tipoSessao : String, val local : String )
+    data class Sessao(val idSessao : Int, val horario : String, val tipoSessao : String, val local : String , val sala : String)
     data class Detalhes(val id : Int, val img : Int, val titulo : String, val sinopse : String, val sessoes : List<Sessao>)
 
     private val listDetalhes: List<Detalhes> = listOf(
@@ -20,9 +20,9 @@ class BuscarDetalhes {
                     "\n" +
                     "Com a ajuda do Professor Lupin e de um Vira-Tempo, eles salvam Black da execução, provando sua inocência. No final, Black foge e Harry ganha um padrinho, mudando sua vida para sempre.",
             sessoes = listOf(
-                Sessao(101, "12:00", "Standard", "Shopping A"),
-                Sessao(102, "15:30", "3D", "Shopping A"),
-                Sessao(103, "20:45", "Standard", "Shopping B")
+                Sessao(101, "12:00", "Standard", "Shopping A" , "Sala 3"),
+                Sessao(102, "15:30", "3D", "Shopping A", "Sala 1"),
+                Sessao(103, "20:45", "Standard", "Shopping B", "Sala 5")
             )
         ),
         Detalhes(
@@ -35,8 +35,8 @@ class BuscarDetalhes {
                     "\n" +
                     "Eles fazem um juramento de sangue para destruir a criatura. Anos depois, já adultos, eles precisam se reunir para cumprir essa promessa e enfrentar Pennywise uma última vez. A história lida com o poder da amizade, o trauma da infância e a superação do mal através da união.",
             sessoes = listOf(
-                Sessao(201, "14:00", "VIP", "Shopping C"),
-                Sessao(202, "18:30", "Standard", "Shopping C")
+                Sessao(201, "14:00", "VIP", "Shopping C", "Sala 7"),
+                Sessao(202, "18:30", "Standard", "Shopping C", "Sala 2")
             )
         ),
         Detalhes(
@@ -51,10 +51,10 @@ class BuscarDetalhes {
                     "\n" +
                     "A mentira cresce rapidamente quando os dois filhos de Katherine também são envolvidos e todo o grupo — Danny, Palmer, Katherine e as crianças — embarca em uma viagem ao Havaí. Lá, em meio a diversas situações hilárias e a aparição inesperada de uma antiga rival de Katherine (Nicole Kidman), a linha entre a mentira e a realidade começa a se apagar. Danny e Katherine percebem que a química entre eles é muito maior do que a simples parceria profissional, questionando quem é o verdadeiro amor de Danny.",
             sessoes = listOf(
-                Sessao(301, "10:30", "Standard", "Shopping D"),
-                Sessao(302, "16:15", "Standard", "Shopping A"),
-                Sessao(303, "19:45", "3D", "Shopping A"),
-                Sessao(304, "22:00", "VIP", "Shopping B")
+                Sessao(301, "10:30", "Standard", "Shopping D", "Sala 1"),
+                Sessao(302, "16:15", "Standard", "Shopping A", "Sala 4"),
+                Sessao(303, "19:45", "3D", "Shopping A", "Sala 2"),
+                Sessao(304, "22:00", "VIP", "Shopping B", "Sala 8")
             )
         ),
         Detalhes(
@@ -67,7 +67,7 @@ class BuscarDetalhes {
                     "\n" +
                     "A missão é um sucesso, mas o ato traz o Thanos de 2014 para o presente. Os Vingadores, reunindo todos os seus aliados ressuscitados, travam uma batalha final épica contra o Titã. O sacrifício de Tony Stark (Homem de Ferro), usando as Joias para eliminar Thanos e seu exército, salva o universo e restaura toda a vida perdida.",
             sessoes = listOf(
-                Sessao(401, "21:00", "Standard", "Shopping C")
+                Sessao(401, "21:00", "Standard", "Shopping C", "Sala 6")
             )
 
         ),
@@ -81,9 +81,9 @@ class BuscarDetalhes {
                     "\n" +
                     "Para sobreviver e descobrir a identidade do novo assassino, os jovens precisam da ajuda dos heróis lendários da franquia: Sidney Prescott, Gale Weathers e Dewey Riley. O filme é uma releitura meta-referencial do original, misturando a nova geração com a clássica, enquanto expõe as regras dos \"reboots-sequência\" de filmes de terror.",
             sessoes = listOf(
-                Sessao(501, "13:40", "Standard", "Shopping A"),
-                Sessao(502, "17:10", "3D", "Shopping D"),
-                Sessao(503, "23:59", "VIP", "Shopping D")
+                Sessao(501, "13:40", "Standard", "Shopping A", "Sala 6"),
+                Sessao(502, "17:10", "3D", "Shopping D", "Sala 4"),
+                Sessao(503, "23:59", "VIP", "Shopping D", "Sala 9")
             )
         ),
         Detalhes(
@@ -96,8 +96,8 @@ class BuscarDetalhes {
                     "\n" +
                     "Eles enfrentam os piratas amaldiçoados em uma aventura épica cheia de duelos e reviravoltas para quebrar o feitiço e restaurar a ordem no Caribe.",
             sessoes = listOf(
-                Sessao(601, "11:00", "Standard", "Shopping B"),
-                Sessao(602, "18:45", "Standard", "Shopping C")
+                Sessao(601, "11:00", "Standard", "Shopping B", "Sala 3"),
+                Sessao(602, "18:45", "Standard", "Shopping C", "Sala 5")
             )
         ),
         Detalhes(
@@ -108,23 +108,23 @@ class BuscarDetalhes {
                     "\n" +
                     "A paixão é tragicamente interrompida quando o navio atinge um iceberg. O amor de Jack e Rose é colocado à prova em meio ao caos e ao pânico do naufrágio. O filme é um épico de romance e desastre, focado na luta deles pela sobrevivência.",
             sessoes = listOf(
-                Sessao(701, "15:10", "VIP", "Shopping A"),
-                Sessao(702, "19:30", "Standard", "Shopping A"),
-                Sessao(703, "21:30", "3D", "Shopping D")
+                Sessao(701, "15:10", "VIP", "Shopping A", "Sala 8"),
+                Sessao(702, "19:30", "Standard", "Shopping A", "Sala 7"),
+                Sessao(703, "21:30", "3D", "Shopping D", "Sala 1")
             )
         ),
         Detalhes(
             8,
             R.drawable.johnwick,
             "John Wick 3",
-            "John Wick está em fuga em Manhattan com uma recompensa de US\$ 14 milhões pela sua cabeça, após ter violado a regra máxima do submundo dos assassinos: matar dentro do Hotel Continental.\n" +
+            "John Wick está em fuga em Manhattan com uma recompensa de US$ 14 milhões pela sua cabeça, após ter violado a regra máxima do submundo dos assassinos: matar dentro do Hotel Continental.\n" +
                     "\n" +
                     "Considerado \"excomungado\" pela Alta Cúpula, ele precisa lutar contra um exército de assassinos de elite que estão atrás dele, transformando-se de caçador em caça.\n" +
                     "\n" +
                     "Para sobreviver, John busca a ajuda de antigos aliados e tenta encontrar o caminho para o Ancião, a única figura capaz de perdoá-lo. O filme é uma jornada de ação brutal e coreografada, onde John Wick precisa \"preparar-se para a guerra\" e enfrentar as consequências de suas escolhas.",
             sessoes = listOf(
-                Sessao(801, "14:20", "Standard", "Shopping B"),
-                Sessao(802, "20:10", "VIP", "Shopping C")
+                Sessao(801, "14:20", "Standard", "Shopping B", "Sala 5"),
+                Sessao(802, "20:10", "VIP", "Shopping C", "Sala 8")
             )
         )
     )

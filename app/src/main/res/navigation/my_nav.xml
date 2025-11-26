@@ -20,11 +20,20 @@
         android:id="@+id/emCartaz"
         android:name="com.example.appmovies.EmCartaz"
         android:label="fragment_em_cartaz"
-        tools:layout="@layout/fragment_em_cartaz" />
+        tools:layout="@layout/fragment_em_cartaz" >
+        <action
+            android:id="@+id/action_emCartaz_to_detalhes"
+            app:destination="@id/detalhes" />
+    </fragment>
     <fragment
         android:id="@+id/emBreve"
         android:name="com.example.appmovies.EmBreve"
         android:label="fragment_em_breve"
         tools:layout="@layout/fragment_em_breve" />
+    <activity
+        android:id="@+id/detalhes"
+        android:name="com.example.appmovies.Detalhes"
+        android:label="activity_detalhes"
+        tools:layout="@layout/activity_detalhes" />
 
 </navigation>

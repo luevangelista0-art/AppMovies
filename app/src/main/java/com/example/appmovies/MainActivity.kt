@@ -23,14 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         val barLayout = findViewById<AppBarLayout>(R.id.toolbarLayout)
 
-        ViewCompat.setOnApplyWindowInsetsListener(barLayout) {view, insets ->
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-            view.updatePadding(
-                top = systemBarsInsets.top
-            )
-            insets
-        }
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
@@ -41,15 +34,11 @@ class MainActivity : AppCompatActivity() {
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
 
-                // NOVO CÓDIGO AQUI:
 
-                // O ID do Fragment de login (definido no seu nav_graph.xml)
-                if (destination.id == R.id.telaInicial) { // Substitua R.id.loginFragment pelo ID correto do seu Fragment inicial
-                    // Esconde as duas barras
+                if (destination.id == R.id.telaInicial) {
                     bottomNav.visibility = View.GONE
                     barLayout.visibility = View.GONE
                 } else {
-                    // Mostra as duas barras em qualquer outro Fragment
                     bottomNav.visibility = View.VISIBLE
                     barLayout.visibility = View.VISIBLE
                 }
@@ -60,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -4,16 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appmovies.BuscarDetalhes
+import com.example.appmovies.DetalhesRepositorio
 import com.example.appmovies.databinding.ItemHorarioBinding
 
 class HorariosAdapter (
     private val context: Context,
-    private val sessoes: List<BuscarDetalhes.Sessao>
+    private val sessoes: List<DetalhesRepositorio.Sessao>
 ) : RecyclerView.Adapter<HorariosAdapter.ViewHolder>() {
 
     class ViewHolder(private val binding: ItemHorarioBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(sessao: BuscarDetalhes.Sessao, context: Context) {
+        fun bind(sessao: DetalhesRepositorio.Sessao, context: Context) {
             binding.horario.text = sessao.horario
             binding.local.text = sessao.local
             binding.tipo.text = sessao.tipoSessao

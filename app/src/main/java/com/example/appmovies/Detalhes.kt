@@ -1,6 +1,5 @@
 package com.example.appmovies
 
-import android.health.connect.datatypes.units.Length
 import android.os.Bundle
 import android.view.Menu
 import android.widget.ImageView
@@ -8,8 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appmovies.recyclerview.adapter.HorariosAdapter
@@ -24,7 +21,7 @@ class Detalhes : AppCompatActivity() {
         setContentView(R.layout.activity_detalhes)
 
         val filmeId = intent.getIntExtra(chave_id, -1)
-        val busca = BuscarDetalhes()
+        val busca = DetalhesRepositorio()
 
         val filmeCompleto = busca.getDetalhe(filmeId)
 

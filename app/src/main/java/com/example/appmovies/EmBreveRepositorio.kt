@@ -2,7 +2,7 @@ package com.example.appmovies
 
 import kotlin.collections.find
 
-class FilmeRepositorio {
+class EmBreveRepositorio {
 
 
     data class GrupoSessao(val tipoSessao : String, val local : String , val sala : String, val endereco : String, val horarios: List<String>)

@@ -10,7 +10,7 @@ import android.view.View
 
 
 fun popup(context: Context, filmeId: Int) {
-        val repositorio = FilmeRepositorio()
+        val repositorio = EmBreveRepositorio()
 
 
         val dialogView = LayoutInflater.from(context).inflate(R.layout.signin, null)
